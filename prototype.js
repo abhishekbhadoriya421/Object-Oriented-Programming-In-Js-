@@ -8,9 +8,16 @@ BankAccount.prototype.deposit = function (amount) {
     this._balance = amount
 }
 
+
+rani = new BankAccount('rani', 1234567890);
+console.log(rani.__proto__);
+console.log(BankAccount);
+
 /**
- * This is call protoitype chaining here withdrawal is not define directly in BankAccount so it check in its parent prototye if this function if found there it returns otherwise it throw error 
+ * Proto points to the object of base class prototype
  */
+console.log(rani.__proto__ === BankAccount.prototype.__proto__)
+
 Object.prototype.withdrawal = function (amount) {
     console.log('hello From Object');
 }
@@ -18,3 +25,10 @@ rani = new BankAccount('rani', 1234567890);
 rani.withdrawal(1000)
 
 console.log(rani);
+
+
+
+
+
+
+
